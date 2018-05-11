@@ -1,0 +1,19 @@
+Package: dissertation
+Title: dissertation down
+Version: 1.0.0
+Authors@R: c(
+  person("Xiangyun", "Huang", , "xiangyunfaith@outlook.com", c("aut", "cre"))
+  )
+Maintainer: Xiangyun Huang <xiangyunfaith@outlook.com>
+Description: master thesis template of China University of Mining and Technology, Beijing
+URL: https://github.com/XiangyunHuang/dissertation-down
+BugReports: https://github.com/XiangyunHuang/dissertation-down/issues
+License: MIT + file LICENSE
+Suggests:
+    knitr
+Depends: 
+    R (>= 3.1.0)
+Imports: 
+    showtext,
+    svglite,
+    gridExtra

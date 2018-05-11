@@ -1,0 +1,22 @@
+book_filename: "dissertation-down"
+delete_merged_file: true
+language:
+  label:
+    fig: "图 "
+    tab: "表 "
+  ui:
+    edit: "编辑"
+    chapter_name: ["第 ", " 章"]
+
+output_dir: "docs"
+new_session: yes
+before_chapter_script: ["common.R"]
+
+rmd_files: [
+  "index.Rmd",
+  "00d-abstract.Rmd",
+  "01-introduction.Rmd",
+
+  # 参考文献
+  "06-references.Rmd",
+]

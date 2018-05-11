@@ -1,0 +1,63 @@
+\usepackage{booktabs}
+\usepackage[default]{sourceserifpro}
+\usepackage[sfdefault]{sourcesanspro}
+\usepackage[scale=0.8]{sourcecodepro}
+
+% \usepackage[super]{gbt7714}
+
+\usepackage{amsfonts} % \mathbb \mathfrak
+\usepackage{mathrsfs} % \mathscr
+\usepackage{makeidx}
+\makeindex
+
+% 章节标题数字样式
+\ctexset{
+  chapter/name = {,},
+  chapter/number = \arabic{chapter},
+  chapter/numberformat = \sf, % 数字字体 Arial
+  chapter/beforeskip = 16pt, % 标题前后的间距  即12磅
+  chapter/afterskip = 16pt,  % 即6磅
+  chapter/fixskip = true, % 标题与正文的距离
+  chapter/format += \heiti\zihao{3},  % 一级标题
+  section/numberformat = \rm,
+  section/format += \heiti\zihao{4}\raggedright, % 二级标题
+  section/beforeskip = 16pt, % 段前后的间距 同一级标题
+  section/afterskip = 16pt,
+  section/fixskip = true, % 标题与正文的距离  
+  subsection/numberformat = \rm,
+  subsection/format += \heiti\zihao{-4}\raggedright,  % 三级标题
+  % contentsname = {目\quad 录},
+}
+
+\setlength\parindent{40pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrule}{\hrule height1pt width\headwidth \vspace{3.0pt}\hrule width\headwidth}
+\fancyhead[EC]{\kaishu 中国矿业大学~（北京） 硕士学位论文}
+\fancyhead[OC]{\kaishu \leftmark}
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{ \fancyhf{} %
+\fancyhead[EC]{\kaishu 中国矿业大学~（北京） 硕士学位论文}
+\fancyhead[OC]{\kaishu \leftmark}
+\fancyfoot[C]{\thepage}}
+
+% https://tex.stackexchange.com/questions/354873/xelatex-sourcecodepro-listings-curly-quotes-always
+\makeatletter
+\defaultfontfeatures[\ttfamily]{
+    Numbers   = \sourcecodepro@figurestyle ,
+    Scale     = \SourceCodePro@scale ,
+    Extension = .otf }
+
+\setmonofont
+		[ UprightFont    = *-\sourcecodepro@regstyle ,
+		  ItalicFont     = *-\sourcecodepro@regstyle It ,
+		  BoldFont       = *-\sourcecodepro@boldstyle , 
+		  BoldItalicFont = *-\sourcecodepro@boldstyle It ]
+		{SourceCodePro}        
+\makeatother
+
+\RecustomVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},formatcom=\xeCJKVerbAddon}
+
+\frontmatter

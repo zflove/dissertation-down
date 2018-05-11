@@ -1,0 +1,40 @@
+language: r
+r:
+  - release
+  - devel
+dist: trusty
+sudo: false
+cache:
+  packages: true
+  directories:
+  - $HOME/texlive
+
+pandoc_version: 2.2
+branches:
+  only:
+    - master
+addons:
+  apt:
+    packages:
+      - ghostscript
+      - imagemagick
+      - optipng
+
+r_github_packages: 
+  - tidyverse/ggplot2
+  - yihui/tinytex
+  - rstudio/bookdown
+
+before_install:
+  - tlmgr update --all
+
+script:
+  - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "all")'
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+     branch: master
+  local_dir: docs

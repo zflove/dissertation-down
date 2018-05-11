@@ -1,0 +1,27 @@
+bookdown::gitbook:
+  css: style.css
+  dev: svglite
+  config:
+    toc:
+      collapse: none
+      before: |
+        <li><a href="./">A Minimal Book Example</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    download: ["pdf", "epub"]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+    before_body: before_body.tex
+    after_body: after_body.tex     
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: no
+  pandoc_args: "--top-level-division=chapter"
+  toc_depth: 3
+  toc_bib: yes
+  toc_unnumbered: yes
+  toc_appendix: yes
+  highlight_bw: no
+  template: default.latex
+bookdown::epub_book: default
