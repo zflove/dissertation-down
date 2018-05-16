@@ -21,6 +21,7 @@ addons:
       - ghostscript
       - imagemagick
       - optipng
+      - python-matplotlib
 
 r_github_packages: 
   - tidyverse/ggplot2
@@ -29,7 +30,7 @@ r_github_packages:
 
 before_install:
   - tlmgr update --all
-  - tlmgr install gbt7714
+  - tlmgr install gbt7714 psnfss type1cm ucs ncntrsbk helvetic
 
 script:
   - Rscript -e 'bookdown::render_book("index.Rmd", output_format = "all")'
