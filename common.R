@@ -37,7 +37,7 @@ knitr::opts_chunk$set(
   fig.ext = if (knitr::is_html_output()) "svg" else if (knitr::is_latex_output()) "pdf" else "png",
   dev = if (knitr::is_html_output()) "svg" else if (knitr::is_latex_output()) "pdf" else "png",
   engine.path = list(
-    octave = "/usr/bin/octave-cli",
+    # octave = "/usr/bin/octave-cli",
     python = "/usr/bin/python"
   )
 )

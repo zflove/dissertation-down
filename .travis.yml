@@ -21,7 +21,9 @@ addons:
       - ghostscript
       - imagemagick
       - optipng
+      - python-numpy
       - python-matplotlib
+      - python-tk
 
 r_github_packages: 
   - tidyverse/ggplot2
