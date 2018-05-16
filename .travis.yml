@@ -9,10 +9,12 @@ cache:
   directories:
   - $HOME/texlive
 
-pandoc_version: 2.2
+pandoc_version: 2.2.1
+
 branches:
   only:
     - master
+
 addons:
   apt:
     packages:
