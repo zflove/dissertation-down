@@ -1,4 +1,5 @@
 bookdown::gitbook:
+  highlight: pygments
   css: style.css
   dev: svglite
   config:
@@ -9,6 +10,7 @@ bookdown::gitbook:
       after: |
         <li><a href="https://xiangyun.netlify.com/" target="blank">黄湘云</a></li>
     download: ["pdf", "epub"]
+    edit: https://github.com/XiangyunHuang/dissertation-down/edit/master/%s
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
@@ -24,4 +26,5 @@ bookdown::pdf_book:
   toc_appendix: yes
   highlight_bw: no
   template: default.latex
-bookdown::epub_book: default
+bookdown::epub_book: 
+  dev: svglite
