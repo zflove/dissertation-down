@@ -18,77 +18,53 @@ links-as-notes: yes
 colorlinks: yes
 mathspec: yes
 toccolor: magenta
-classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3, table"
+classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3, table, notitlepage"
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
-# 前言
+```{r setup, include=FALSE}
+# sudo apt-get install libfreetype6-dev libpython-dev
+# or sudo yum install freetype-devel
+Pkgs <- c(
+  "reticulate",
+  "showtext", "sysfonts", "showtextdb",
+  "fontcm",
+  "tikzDevice", "filehash", "png",
+  "extrafontdb", "Rttf2pt1", "extrafont",
+  "tinytex", "glue"
+)
 
-封面、扉页、独创性声明、授权页、中英文摘要、目录、正文、参考文献、致谢、作者简介、附录
+lapply(Pkgs, function(pkg) {
+  if (system.file(package = pkg) == "") install.packages(pkg)
+})
 
-安装 TinyTeX
+if (!all(c("source-han-sans-cn", "source-han-serif-cn") %in% showtextdb::font_installed())) {
+  showtextdb::font_install(showtextdb::source_han_serif("CN"))
+  showtextdb::font_install(showtextdb::source_han_sans("CN"))
+}
+extrafont::font_install("fontcm")
+extrafont::loadfonts()
+extrafont::fonts() # registered with pdfFonts()
+sysfonts::font_families() # List available font families
 
-```{r eval=FALSE}
-if (!require("tinytex")) {
-  install.packages("tinytex")
-} else {
-  tinytex::install_tinytex(dir = "where/you/want/to/go")
+
+tex_pkgs <- c(
+  "ctex", "ms", "xecjk", "ulem"
+  , "environ", "trimspaces", "zhnumber"
+  , "fandol", "filehook", "xcolor", "colortbl"
+  , "sourceserifpro", "sourcesanspro", "sourcecodepro"
+  , "jknapltx", "lm-math", "rsfs", "pdfcrop", "gbt7714"
+  , "psnfss", "type1cm", "ucs", "tex4ht", "ncntrsbk"
+  , "helvetic", "preview", "dvipng", "dvips", "dvisvgm"
+  , "pgf"
+)
+to_install_tex_pkgs <- setdiff(tex_pkgs, tinytex::tl_pkgs())
+if (length(to_install_tex_pkgs) > 0) {
+  tinytex::tlmgr_install(to_install_tex_pkgs)
 }
 ```
 
-安装参考文献样式和字体包
-
-```{r eval=FALSE}
-tinytex::tlmgr_install(pkgs = c(
-  "ctex", "xecjk", "zhnumber", "fandol",
-  "unicode-math", "filehook", "lm-math",
-  "gbt7714", "sourcecodepro",
-  "sourceserifpro", "sourcesanspro"
-))
-```
-
-解释一下 `classoption` 的内容
-
-```ymal
-classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3, table"
-```
-
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
-
-```{r}
-library(reticulate)
-os <- import("os")
-os$listdir(".")
-```
-
-
-```{python, eval = TRUE, fig.cap = "公式", dev = if (knitr::is_latex_output()) "pdf" else "png"}
-from __future__ import unicode_literals
-import numpy as np
-import matplotlib
-matplotlib.rcParams['text.usetex'] = True
-matplotlib.rcParams['text.latex.unicode'] = True
-import matplotlib.pyplot as plt
-plt.switch_backend('agg') # Very Important in R Markdown
-
-t = np.linspace(0.0, 1.0, 100)
-s = np.cos(4 * np.pi * t) + 2
-
-fig, ax = plt.subplots(figsize=(6, 4), tight_layout=True)
-ax.plot(t, s)
-
-ax.set_xlabel(r'\textbf{time (s)}')
-# ax.set_ylabel(r'\textit{Velocity}(\N{DEGREE SIGN}/sec)', fontsize=16)
-ax.set_ylabel(r'\textit{Velocity}($^{\circ}$/sec)', fontsize=16)
-ax.set_title(r'\TeX\ is Number $\displaystyle\sum_{n=1}^\infty'
-             r'\frac{-e^{i\pi}}{2^n}$!', fontsize=16, color='r')
-plt.show()
-#plt.savefig('test.svg') 
-```
-
-
+# 使用说明 {#instructions .unnumbered}
 
 ```{r include=FALSE,cache=FALSE}
 # automatically create a bib database for R packages

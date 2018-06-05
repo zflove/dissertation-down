@@ -1,3 +1,31 @@
-# 摘要
+# 摘要 {#abstract .unnumbered}
 
-Here is a review of existing methods.
+\pagenumbering{Roman} 
+\medskip
+空间广义线性混合效应模型具有广泛的应用，特别是空间统计领域，为了统计推断，相关的计算方法还没到收敛的状态。1998年 Peter J. Diggle 实现基于马尔科夫链蒙特卡罗算法的贝叶斯估计，2002 年 Venables, W. N. 和 Ripley, B. D 实现惩罚拟似然估计， 2004 年 Ole F Christensen 实现的蒙特卡罗最大似然估计，2009年 H{\aa}vard Rue 实现近似贝叶斯推断方法---集成嵌套拉普拉斯算法。在大规模稀疏数据环境下，高效的计算方法一直是研究的重要方向。亮点在于实现了目前用以模型选择和统计推断的低秩近似、（限制）最大似然和近似贝叶斯算法，还在 Stan 框架下实现了基于贝叶斯推断的算法。并且通过模拟比较，得知低秩近似具有明显的效率优势，Stan 框架因其本身优化程度极高的计算库、并行特点和编译带来的再次优化大大加速了模拟的过程。
+\medskip
+\par
+\heiti{ 关键词 ：} \normalfont 地质统计，空间广义线性混合效应模型，马尔科夫链蒙特卡罗
+
+\par
+\vspace{1cm}
+\noindent\begin{tabular}{l}
+\toprule[1pt]\hline
+\hspace*{14.5cm}
+\end{tabular}
+
+\begin{center}
+\bf{ \Large Abstract} \normalfont
+\vskip 0.6cm
+\end{center}
+\par
+Spatial generalized linear mixed effects model (SGLMM) has a wide range of applications, especially in the area of spatial statistics. For statistical inference, the relevant calculation methods have not yet reached the state-of-art. In 1998, Peter J. Diggle and his colleagues had bayesian estimation using Markov Chain Monte Carlo algorithms. In 2002, Venables, W. N. and Ripley, B. D fitted SGLMM models via Penalized Quasi-Likelihood. In 2004, Ole F Christensen got Monte Carlo Maximum Likelihood estimations of SGLMMs. In 2009, an approximate bayesian inference --- Integrated Nested Laplace Approximations was used to fit SGLMMs by H{\aa}vard Rue. In large-scale sparse settings, effective and efficient algorithms are always pursued by reseachers. Low-rank, likelihood-based and bayesian framework approaches are carried out by R language, stan library only for the latter. By comparison, the low-rank approximation has obvious efficiency advantages. The Stan framework greatly accelerates the simulation process due to its highly optimized computational library, parallel features, and re-optimization from compilation.
+\medskip
+\par
+
+\bf{ Key words：}\normalfont Geostatistics，Spatial Generalized Linear Mixed Models, Markov Chain Monte Carlo
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage

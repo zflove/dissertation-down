@@ -6,9 +6,28 @@ You can label chapter and section titles using `{#label}` after them, e.g., we c
 
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
+```{python nice-fig, eval = TRUE, fig.cap = "公式", dev = if (knitr::is_latex_output()) "pdf" else "png"}
+from __future__ import unicode_literals
+import numpy as np
+import matplotlib
+matplotlib.rcParams['text.usetex'] = True
+matplotlib.rcParams['text.latex.unicode'] = True
+import matplotlib.pyplot as plt
+plt.switch_backend('agg') # Very Important in R Markdown
+
+t = np.linspace(0.0, 1.0, 100)
+s = np.cos(4 * np.pi * t) + 2
+
+fig, ax = plt.subplots(figsize=(6, 4), tight_layout=True)
+ax.plot(t, s)
+
+ax.set_xlabel(r'\textbf{time (s)}')
+# ax.set_ylabel(r'\textit{Velocity}(\N{DEGREE SIGN}/sec)', fontsize=16)
+ax.set_ylabel(r'\textit{Velocity}($^{\circ}$/sec)', fontsize=16)
+ax.set_title(r'\TeX\ is Number $\displaystyle\sum_{n=1}^\infty'
+             r'\frac{-e^{i\pi}}{2^n}$!', fontsize=16, color='r')
+plt.show()
+#plt.savefig('test.svg') 
 ```
 
 Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).

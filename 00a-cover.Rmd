@@ -1,3 +1,44 @@
-# 封面
+# 封面 {#cover .unnumbered}
 
+\thispagestyle{empty}
 
+\begin{figure}[h]
+\vspace{1.9cm}
+\centering
+\includegraphics[width=5in]{images/cumtb}
+\end{figure}
+
+\vspace{1cm} 
+
+\begin{center}
+{\huge{\heiti\zihao{-0}硕~ 士~ 学~ 位~ 论~ 文}}   \\
+
+\vspace{1.5cm} 
+
+{\heiti\zihao{-2}空间广义线性混合效应模型及其应用} \\ 
+\end{center}
+
+\vspace{2.5cm}
+
+\begin{flushleft}
+\hspace{4cm}\zihao{3}\makebox[0.16\textwidth][s]{作者:} \quad \underline{\makebox[0.3\textwidth][c]{\kaishu\zihao{3} 黄湘云}}\\
+\vspace{0.2cm}
+\hspace{4cm}\zihao{3}\makebox[0.16\textwidth][s]{学院:} \quad \underline{\makebox[0.3\textwidth][c]{\kaishu\zihao{3} 理学院}}\\
+\vspace{0.2cm}
+\hspace{4cm}\zihao{3}\makebox[0.16\textwidth][s]{学号:} \quad \underline{\makebox[0.3\textwidth][c]{\zihao{3}TSP150701029}}\\
+\vspace{0.2cm}
+\hspace{4cm}\zihao{3}\makebox[0.16\textwidth][s]{学科专业:} \quad \underline{\makebox[0.3\textwidth][c]{\kaishu\zihao{3} 统计学}}\\
+\vspace{0.2cm}
+\hspace{4cm}\zihao{3}\makebox[0.16\textwidth][s]{导师:} \quad \underline{\makebox[0.3\textwidth][c]{\kaishu\zihao{3} 李再兴}}\\
+\end{flushleft}
+
+\vspace{3cm}
+
+\begin{center}
+{\songti\zihao{3} 2018 年 6 月} 
+\end{center}
+
+\newpage 
+\thispagestyle{empty}
+\mbox{}
+\newpage 

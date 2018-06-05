@@ -2,25 +2,6 @@ library(methods)
 set.seed(2018)
 options(digits = 3)
 
-Pkgs <- c(
-  "reticulate",
-  "showtext", "sysfonts", "showtextdb",
-  "fontcm",
-  "tikzDevice", "filehash", "png",
-  "extrafontdb", "Rttf2pt1", "extrafont"
-)
-if (length(setdiff(Pkgs, .packages(TRUE))) > 0) {
-  install.packages(setdiff(Pkgs, .packages(TRUE)))
-}
-
-if (!all(c("source-han-sans-cn", "source-han-serif-cn") %in% showtextdb::font_installed())) {
-  showtextdb::font_install(showtextdb::source_han_serif("CN"))
-  showtextdb::font_install(showtextdb::source_han_sans("CN"))
-}
-extrafont::font_install("fontcm")
-extrafont::loadfonts()
-extrafont::fonts() # registered with pdfFonts()
-sysfonts::font_families() # List available font families
 
 knitr::opts_chunk$set(
   comment = "#>",

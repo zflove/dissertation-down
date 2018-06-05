@@ -14,7 +14,12 @@ before_chapter_script: ["common.R"]
 
 rmd_files: [
   "index.Rmd",
-  "00d-abstract.Rmd",
+  
+  "00a-cover.Rmd",    # 封面 
+  "00b-titlepage.Rmd",  # 扉页
+  "00c-declaration.Rmd", # 独创性声明和授权页
+  "00d-abstract.Rmd", # 中英文摘要
+  
   "01-introduction.Rmd",
 
   # 参考文献
