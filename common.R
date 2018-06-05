@@ -35,12 +35,13 @@ knitr::opts_chunk$set(
   fig.asp = 0.618, # 1 / phi
   # fig.show = "hold", # not for python matplotlib
   fig.ext = if (knitr::is_html_output()) "svg" else if (knitr::is_latex_output()) "pdf" else "png",
-  dev = if (knitr::is_html_output()) "svg" else if (knitr::is_latex_output()) "pdf" else "png",
-  engine.path = list(
-    # octave = "/usr/bin/octave-cli",
-    python = "/usr/bin/python"
-  )
+  dev = if (knitr::is_html_output()) "svg" else if (knitr::is_latex_output()) "pdf" else "png"
+  # engine.path = list(
+  #   # octave = "/usr/bin/octave-cli",
+  #   python = "/usr/bin/python"
+  # )
 )
+
 ext <- if (knitr::is_html_output()) ".svg" else if (knitr::is_latex_output()) ".pdf" else ".png"
 
 knitr::knit_hooks$set(optipng = knitr::hook_optipng, pdfcrop = knitr::hook_pdfcrop)
@@ -72,3 +73,15 @@ knitr::knit_hooks$set(tikz2png = function(before, options, envir) {
     system(sprintf("convert %s %s %s", options$tikz2png, fig, sub("\\.pdf$", ".png", fig)))
   }
 })
+
+is_on_travis = identical(Sys.getenv("TRAVIS"), "true")
+is_online = curl::has_internet()
+
+Pkgs <- c("reticulate")
+
+lapply(Pkgs, function(pkg) {
+  if (system.file(package = pkg) == "") install.packages(pkg)
+})
+
+library(reticulate)
+if(is_on_travis) use_python("/opt/pyenv/shims/python") else use_python("/usr/bin/python", required = FALSE)
