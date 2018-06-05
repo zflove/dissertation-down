@@ -7,7 +7,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">本硕博学位论文模板</a></li>
       after: |
-        <li><a href="https://bookdown.org/xiangyun/dissertation-down/" target="blank">Published with bookdown</a></li>
+        <li><a href="https://xiangyun.netlify.com/" target="blank">黄湘云</a></li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

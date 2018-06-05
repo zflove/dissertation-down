@@ -19,7 +19,7 @@ colorlinks: yes
 mathspec: yes
 toccolor: magenta
 classoption: "hyperref, a4paper, UTF8, zihao = -4, linespread = 1.3, table, notitlepage"
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "这是中国矿业大学（北京）本硕博学位论文模板，基于 Pandoc 和 R Markdown 制作"
 ---
 
 ```{r setup, include=FALSE}
@@ -46,7 +46,6 @@ extrafont::font_install("fontcm")
 extrafont::loadfonts()
 extrafont::fonts() # registered with pdfFonts()
 sysfonts::font_families() # List available font families
-
 
 tex_pkgs <- c(
   "ctex", "ms", "xecjk", "ulem"

@@ -2,7 +2,6 @@ library(methods)
 set.seed(2018)
 options(digits = 3)
 
-
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,

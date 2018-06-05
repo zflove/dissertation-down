@@ -6,7 +6,7 @@ You can label chapter and section titles using `{#label}` after them, e.g., we c
 
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
-```{python nice-fig, eval = TRUE, fig.cap = "公式", dev = if (knitr::is_latex_output()) "pdf" else "png"}
+```{python nice-fig, fig.cap = "公式"}
 from __future__ import unicode_literals
 import numpy as np
 import matplotlib
