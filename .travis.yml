@@ -31,7 +31,7 @@ r_github_packages:
   - rstudio/bookdown
 
 before_install:
-  - tlmgr update --all
+#  - tlmgr update --all
   - tlmgr install gbt7714 psnfss type1cm ucs ncntrsbk helvetic dvipng
 
 script:
