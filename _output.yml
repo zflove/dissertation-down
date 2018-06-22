@@ -24,7 +24,8 @@ bookdown::pdf_book:
   toc_bib: yes
   toc_unnumbered: no
   toc_appendix: yes
-  highlight_bw: no
+#  highlight_bw: no
+  highlight: NULL
   template: default.latex
 #bookdown::epub_book: 
 #  dev: svglite
