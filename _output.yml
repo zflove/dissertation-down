@@ -26,5 +26,5 @@ bookdown::pdf_book:
   toc_appendix: yes
   highlight_bw: no
   template: default.latex
-bookdown::epub_book: 
-  dev: svglite
+#bookdown::epub_book: 
+#  dev: svglite
