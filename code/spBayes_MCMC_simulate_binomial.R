@@ -1,0 +1,1 @@
+# spBayes MCMC simulate binomial
