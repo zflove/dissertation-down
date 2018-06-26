@@ -1,6 +1,6 @@
 bookdown::gitbook:
   highlight: pygments
-  css: style.css
+  css: css/style.css
   dev: svglite
   config:
     toc:
@@ -13,12 +13,12 @@ bookdown::gitbook:
     edit: https://github.com/XiangyunHuang/dissertation-down/edit/master/%s
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
-    before_body: before_body.tex
-    after_body: after_body.tex     
+    in_header: latex/preamble.tex
+    before_body: latex/before_body.tex
+    after_body: latex/after_body.tex     
   latex_engine: xelatex
   citation_package: natbib
-  keep_tex: no
+  keep_tex: yes
   pandoc_args: "--top-level-division=chapter"
   toc_depth: 3
   toc_bib: yes
@@ -26,6 +26,6 @@ bookdown::pdf_book:
   toc_appendix: yes
 #  highlight_bw: no
   highlight: NULL
-  template: default.latex
+  template: latex/default.latex
 #bookdown::epub_book: 
 #  dev: svglite
