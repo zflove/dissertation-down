@@ -66,6 +66,9 @@ if (length(to_install_tex_pkgs) > 0) {
 
 # 使用说明 {#instructions .unnumbered}
 
+$\mathcal{R,S},\mathbb{R},\mathscr{A}$
+
+
 ```{r include=FALSE,cache=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
