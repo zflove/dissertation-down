@@ -26,7 +26,6 @@ addons:
       - python-tk
 
 r_github_packages: 
-  - tidyverse/ggplot2
   - yihui/tinytex
   - rstudio/bookdown
 
